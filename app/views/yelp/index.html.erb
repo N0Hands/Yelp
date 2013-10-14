@@ -1,0 +1,13 @@
+<h1>yelp</h1>
+
+<ul>
+<% @restaurants.each do |restaurant| %>
+	<li>
+		<h3><%= restaurant.title %></h3>
+		<% restaurant.reviews.each do |review| %>
+			 Review: <%= review.reviewcontent %>
+		 <% end %>
+	</li>
+<% end %>
+
+</ul>
