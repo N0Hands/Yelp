@@ -1,8 +1,11 @@
 Yelp::Application.routes.draw do
 
-  resource :yelp
+  resource :restaurants
 
-  root :to => "yelp#index"
+  root :to => "restaurants#index"
+
+  resource :reviews
+
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

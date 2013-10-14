@@ -1,0 +1,26 @@
+<header class="yelpheader">yelp</header>
+
+<ul>
+<% @restaurants.each do |restaurant| %>
+	<li>
+		<h3><%= restaurant.title %></h3>
+		<% restaurant.reviews.each do |review| %>
+			 Review: <%= review.reviewcontent %>
+		 <% end %>
+	</li>
+<% end %>
+
+</ul>
+<%= form_for Restaurant.new do |f| %>
+	<%= f.text_field :title %>
+	<%= f.submit %>
+<% end %>
+
+
+<%= form_for Review.new do |g| %>
+	<%= g.label :reviewcontent, "Review:" %>
+	<%= g.text_field :reviewcontent %>
+	<%= g.label :restaurant_id, "id"%>
+	<%= g.text_field :restaurant_id %>
+	<%= g.submit %>
+<% end %>
