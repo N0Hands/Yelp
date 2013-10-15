@@ -1,18 +1,22 @@
 class ReviewsController < ActionController::Base
 
 	def index
-		@review = Review.all
+		@reviews = Review.where(:restaurant_id=>params[:restaurant_id])
+		# render json: @reviews.to_json
 	end
 
 	def create
-		@review = Review.new(params[:title])
-		@review.save
+		@restaurant = Restaurant.find(params[:restaurant_id])
 
-		redirect_to ('/')
+		@review = Review.new(:reviewcontent=>params[:review][:reviewcontent])
+		@review.save
+		@restaurant.reviews << @review
+
+		redirect_to (@review.restaurant)
 	end
 
 	def show
-		@review = Review.find(params[:reviewcontent][:restaurant_id])
+		@review = Review.find(params[:id])
 	end
 
 

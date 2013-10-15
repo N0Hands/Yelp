@@ -13,7 +13,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def show
-		@restaurant = Restaurant.find(params[:title])
+		@restaurant = Restaurant.find(params[:restaurant]=>[:restaurant_id])
 	end
 
 

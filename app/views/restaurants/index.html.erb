@@ -1,6 +1,16 @@
-<header class="yelpheader">yelp</header>
+<header class="yelpheader">Yelp! Fake-ass food from companies that hate you.</header>
 
-<ul>
+<% @restaurants.each do |restaurant| %>
+
+  <%= link_to restaurant.title, restaurant %>
+
+<% end %>
+
+
+
+
+
+<!-- <ul>
 <% @restaurants.each do |restaurant| %>
 	<li>
 		<h3><%= restaurant.title %></h3>
@@ -8,19 +18,22 @@
 			 Review: <%= review.reviewcontent %>
 		 <% end %>
 	</li>
-<% end %>
 
+	<div class="review">
+		<%= form_for [restaurant, Review.new] do |g| %>
+			<%= g.label :reviewcontent, "Review:" %>
+			<%= g.text_field :reviewcontent %>
+			<%= g.label :title, "restaurant"%>
+			<%= g.text_field :restaurant_id %>
+			<%= g.submit %>
+		<% end %>
+	</div>
+<% end %>
+<br>
 </ul>
 <%= form_for Restaurant.new do |f| %>
 	<%= f.text_field :title %>
 	<%= f.submit %>
-<% end %>
+<% end %> -->
 
 
-<%= form_for Review.new do |g| %>
-	<%= g.label :reviewcontent, "Review:" %>
-	<%= g.text_field :reviewcontent %>
-	<%= g.label :restaurant_id, "id"%>
-	<%= g.text_field :restaurant_id %>
-	<%= g.submit %>
-<% end %>

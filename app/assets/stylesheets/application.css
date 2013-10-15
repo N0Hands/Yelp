@@ -30,3 +30,13 @@
 	padding-left: 100px;
 
 }
+
+.subheader {
+
+	font-size: 10em;
+}
+
+.review {
+	float: left;
+	margin: auto 0;
+}
