@@ -1,0 +1,10 @@
+<header class="yelpheader">Yelp! Fake-ass food from companies that hate you.</header>
+
+
+
+<center><h1><%= @restaurant.title %></h1></center>
+<div class="individual_review">
+<% @restaurant.reviews.each do |review| %>
+  <p><%= review.reviewcontent %></p>
+<% end %>
+</div>

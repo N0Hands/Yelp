@@ -40,3 +40,13 @@
 	float: left;
 	margin: auto 0;
 }
+
+.individual_review {
+
+	background-color: gray;
+	font-family: arial;
+	font-size: 10px;
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-bottom: 5px;
+}
