@@ -46,5 +46,7 @@ end
 
 gem 'rspec-rails'
 gem 'capybara'
+gem 'bcrypt-ruby'
 # gem 'factory_girl_rails'
+# gem 'bootstrap'
 

@@ -1,4 +1,6 @@
-<header class="yelpheader">Yelp! Fake-ass food from companies that hate you.</header>
+<header class="yelpheader">
+
+	<a href="/">Yelp!</a> Fake-ass food from companies that hate you.</header>
 
 <% @restaurants.each do |restaurant| %>
 
@@ -15,29 +17,17 @@
 <% end %>
 </div>
 
+<div class="create_user">
 
-<!-- <ul>
-<% @restaurants.each do |restaurant| %>
-	<li>
-		<h3><%= restaurant.title %></h3>
-		<% restaurant.reviews.each do |review| %>
-			 Review: <%= review.reviewcontent %>
-		 <% end %>
-	</li>
+<%= form_for User.new do |new_user| %>
 
-	<div class="review">
-		<%= form_for [restaurant, Review.new] do |g| %>
-			<%= g.label :reviewcontent, "Review:" %>
-			<%= g.text_field :reviewcontent %>
-			<%= g.label :title, "restaurant"%>
-			<%= g.text_field :restaurant_id %>
-			<%= g.submit %>
-		<% end %>
-	</div>
+	<% new_user.label :user %>
+	<%= new_user.text_field :user, placeholder: 'Enter user name' %>
+	<%= new_user.submit %>
+
 <% end %>
-<br>
-</ul> -->
 
+</div>
 
 
 

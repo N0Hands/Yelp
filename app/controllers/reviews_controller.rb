@@ -8,6 +8,7 @@ class ReviewsController < ActionController::Base
 	def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
 
+
 		@review = Review.new(:reviewcontent=>params[:review][:reviewcontent])
 		@review.save
 		@restaurant.reviews << @review

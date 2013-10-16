@@ -1,4 +1,4 @@
-<header class="yelpheader">Yelp! Fake-ass food from companies that hate you.</header>
+<header class="yelpheader"><a href="/">Yelp!</a>Fake-ass food from companies that hate you.</header>
 
 
 
@@ -13,7 +13,7 @@
 
 	<div class="create_review">
 		<%= form_for [@restaurant, Review.new] do |g| %>
-			<%= g.label :reviewcontent, "Review:" %>
+			<%= g.label :reviewcontent, "Add your own review of this restaurant:" %>
 			<%= g.text_field :reviewcontent %>
 		
 			<%= g.submit %>

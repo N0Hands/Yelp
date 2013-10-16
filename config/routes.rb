@@ -4,6 +4,10 @@ Yelp::Application.routes.draw do
     resources :reviews
   end
 
+  resources :users do
+    resources :reviews
+  end
+
   root :to => "restaurants#index"
 
 

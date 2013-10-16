@@ -15,9 +15,9 @@ before(:each) do
 
 end
 
-	it 'should say Yelp' do
+	it 'should say Yelp!' do
 		visit '/'
-		expect(page).to have_content('yelp')
+		expect(page).to have_content('Yelp!')
 
 	end
 
@@ -26,23 +26,22 @@ end
 		expect(page).to have_content('Mama')
 	end
 
-	it 'the restaurant should have a review' do
-		visit '/'
-		expect(page).to have_content('Nice!')
-	end
-
-	it 'should create new restaurant entries' do
-		visit '/'
-		expect(restaurant).to receive(:newentry)
-
-	end
-
-
-
 end
 
 
+describe 'User' do 
 
+	before(:each) do
+		@user = User.new(username: 'Foodie')
+		@user.save
+	end
+
+	it 'should have a username' do
+		expect(@user.username).to_eq :username
+	end
+
+
+end
 
 
 
