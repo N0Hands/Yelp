@@ -6,8 +6,14 @@
 
 <% end %>
 
+<div class="create_restaurant">
+<%= form_for Restaurant.new do |f| %>
+	<% f.label :title %> 
+	<%= f.text_field :title, placeholder: 'Restaurant Name' %>
 
-
+	<%= f.submit %>
+<% end %>
+</div>
 
 
 <!-- <ul>
@@ -30,10 +36,9 @@
 	</div>
 <% end %>
 <br>
-</ul>
-<%= form_for Restaurant.new do |f| %>
-	<%= f.text_field :title %>
-	<%= f.submit %>
-<% end %> -->
+</ul> -->
+
+
+
 
 

@@ -3,8 +3,20 @@
 
 
 <center><h1><%= @restaurant.title %></h1></center>
-<div class="individual_review">
-<% @restaurant.reviews.each do |review| %>
-  <p><%= review.reviewcontent %></p>
-<% end %>
-</div>
+
+	<div class="individual_review">
+	<% @restaurant.reviews.each do |review| %>
+	  <p><%= review.reviewcontent %></p>
+	<% end %>
+	</div>
+
+
+	<div class="create_review">
+		<%= form_for [@restaurant, Review.new] do |g| %>
+			<%= g.label :reviewcontent, "Review:" %>
+			<%= g.text_field :reviewcontent %>
+		
+			<%= g.submit %>
+		<% end %>
+	</div>
+

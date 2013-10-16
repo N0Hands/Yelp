@@ -41,4 +41,7 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
   config.include Capybara::DSL
+  config.formatter = :documentation
+  config.include FactoryGirl::syntax::Methods
+  end
 end
